@@ -2,12 +2,17 @@
 
 A simple, colorful, and continuously updating system and process monitor for your terminal, written in Python.
 
-  <!-- You can replace this with a real screenshot -->
+ <!-- You can replace this with a real screenshot -->
 
 ## Features
 
 *   **Live Dashboard**: Continuously updates system and process information in the terminal.
-*   **Overall System Stats**: Displays total CPU and Memory utilization, along with system-wide Network I/O (Sent/Received per second).
+*   **Comprehensive System Header**:
+    *   CPU core counts (physical and logical) and current frequency.
+    *   Detailed RAM and SWAP memory usage (used, total, and percentage).
+    *   System-wide disk I/O rates (Read/s and Write/s).
+    *   Usage information for each mounted disk partition.
+    *   Overall CPU and Memory percentage, and total network I/O rates.
 *   **Per-Core Utilization**: Shows a detailed breakdown of the usage for each individual CPU core.
 *   **Top Process List**: Lists the top N processes, sorted by CPU usage.
 *   **Detailed Process Info**: For each process, it shows:
@@ -15,12 +20,17 @@ A simple, colorful, and continuously updating system and process monitor for you
     *   Process Name
     *   CPU Usage % (can exceed 100% on multi-core systems)
     *   Memory Usage %
-    *   Disk Read/s and Write/s
+    *   Process-specific Disk Read/s and Write/s per second.
+*   **Detailed System Info**:
+    *   System boot time, logged-in users.
+    *   Hardware sensor data for temperatures, fans, and battery status (where available).
+*   **Optional Network Details**: A detailed view of network interfaces and connection statuses.
 *   **Colorful & Readable Output**:
     *   Uses colors to distinguish labels from data.
     *   Highlights high CPU usage (>75%) in red for easy identification.
     *   Features colored separators and alternating background colors for the process list to improve readability.
-*   **Customizable**: Use command-line arguments to change the number of processes displayed.
+*   **CSV Export**: Log all collected data to a CSV file for later analysis.
+*   **Customizable**: Use command-line arguments to control the display and refresh rate.
 
 ## Requirements
 
