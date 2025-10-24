@@ -129,7 +129,7 @@ class RealNerdStats:
 
     def _format_header(self):
         """Formats the main header section."""
-        lines = ["--- RealNerdStats --- Press Ctrl+C to exit ---"]
+        lines = [f"{Fore.YELLOW}{Back.LIGHTBLUE_EX}--- RealNerdStats --- Press Ctrl+C to exit ---{Back.RESET}{Fore.RESET}"]
         s = self.system_stats
         freq_str = f"{s['cpu_frequency'].current:.0f}MHz" if s['cpu_frequency'] else "N/A"
         lines.append(f"{Fore.LIGHTBLUE_EX}Cores:{Fore.RESET} {s['cpu_cores_physical']} Physical, {s['cpu_cores_logical']} Logical | {Fore.LIGHTBLUE_EX}Freq:{Fore.RESET} {freq_str}")
