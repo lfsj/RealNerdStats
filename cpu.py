@@ -67,10 +67,11 @@ class RealNerdStats:
         """Gathers and returns system-wide statistics."""
         virtual_mem = psutil.virtual_memory()
         swap_mem = psutil.swap_memory()
+        per_cpu = psutil.cpu_percent(interval=0.1, percpu=True)
         self.system_stats = {
-            'overall_cpu': psutil.cpu_percent(interval=0.1),
+            'overall_cpu': sum(per_cpu) / len(per_cpu),
             'overall_mem': virtual_mem.percent,
-            'per_cpu_usage': psutil.cpu_percent(interval=0.1, percpu=True),
+            'per_cpu_usage': per_cpu,
             'cpu_cores_physical': psutil.cpu_count(logical=False),
             'cpu_cores_logical': psutil.cpu_count(logical=True),
             'cpu_frequency': psutil.cpu_freq(),
